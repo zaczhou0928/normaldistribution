@@ -105,7 +105,6 @@
     grid-column-gap: 0rem;
     grid-template-rows: repeat(2, 1fr);
     height: 85vh;
-    border: 3px solid black;
   }
 
   .section-container {
