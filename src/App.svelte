@@ -4,6 +4,7 @@
   import Intro from "./Components/Intro.svelte";
   import TextAndMathEquations from "./Components/TextAndMathEquations.svelte";
   import Conclusion from "./Components/Conclusion.svelte";
+  import ScrollCenter from "./Components/ScrollCenter.svelte";
   import Resources from "./Components/Resources.svelte";
   import ScrollSide from "./Components/ScrollSide.svelte";
   import Histogram from './Components/Histogram.svelte';
@@ -13,5 +14,7 @@
 <Title />
 <Intro />
 <Histogram />
+<ScrollCenter />
 <ScrollSide />
+<TextAndMathEquations />
 <Conclusion />

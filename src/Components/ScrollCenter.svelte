@@ -3,6 +3,11 @@
   import katexify from "../katexify";
   import { scaleOrdinal } from "d3-scale";
   import { select, selectAll } from "d3-selection";
+  import Sample10 from "./Sample10.svelte";
+  import Sample50 from "./Sample50.svelte";
+  import Sample100 from "./Sample100.svelte";
+  import Sample1000 from "./Sample1000.svelte";
+  import SampleAll from "./SampleAll.svelte";
 
   // import { scatterData } from './datasets.js';
 
@@ -21,26 +26,25 @@
 
   // Paragraph text for scrolly
   $: steps = [
-    `<h1 class='step-title'>Step 1</h1>
-    <br><br>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, exercitationem. Quam impedit fuga quia earum architecto qui temporibus deleniti obcaecati assumenda, minima consequatur a fugit?
-    </p>`,
-    `<h1 class='step-title'>Step 2</h1>
-    <p>
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, exercitationem. Quam impedit fuga quia earum architecto qui temporibus deleniti obcaecati assumenda, minima consequatur a fugit?
-    </p>`,
+    `<h1 class='step-title'>Sample Size = 10</h1>
+    <p>text</p>`,
+    `<h1 class='step-title'>Sample Size = 50</h1>
+    <p>text</p>`,
+    `<h1 class='step-title'>Sample Size = 100</h1>
+    <p>text</p>`,
+    `<h1 class='step-title'>Sample Size = 1000</h1>
+    <p>text</p>`,
+    `<h1 class='step-title'>Sample Size = Population</h1>
+    <p>text</p>`
   ];
 
   const target2event = {
-    0: () => {
-      select("#chart3").style("background-color", "darkorange");
-      select("#chart4").style("background-color", "black");
-    },
-    1: () => {
-      select("#chart3").style("background-color", "salmon");
-      select("#chart4").style("background-color", "pink");
-    },
+    0: () => { /* Define interactions for step 0 */ },
+    1: () => { /* Define interactions for step 1 */ },
+    2: () => { /* Define interactions for step 2 */ },
+    3: () => { /* Define interactions for step 3 */ },
+    4: () => { /* Define interactions for step 4 */ },
+    5: () => { /* Define interactions for step 4 */ }
   };
 
   // trigger events on scroll typeof lastname !== "undefined"
@@ -67,12 +71,17 @@
       </Scrolly>
     </div>
     <div class="charts-container">
-      <div class="chart-one">
-        <svg id="chart3" />
-      </div>
-      <div class="chart-two">
-        <svg id="chart4" />
-      </div>
+      {#if value === 0}
+        <Sample10 />
+      {:else if value === 1}
+        <Sample50 />
+      {:else if value === 2}
+        <Sample100 />
+      {:else if value === 3}
+        <Sample1000 />
+      {:else if value === 4}
+        <SampleAll />
+      {/if}
     </div>
   </div>
   <!-- end scroll -->
@@ -81,21 +90,6 @@
 </section>
 
 <style>
-  #chart3,
-  #chart4 {
-    width: 100%;
-    height: 100%;
-  }
-  .chart-one {
-    width: 100%;
-    height: 100%;
-    border: 3px solid skyblue;
-  }
-  .chart-two {
-    width: 100%;
-    height: 100%;
-    border: 3px solid coral;
-  }
   /* space after scroll is finished */
   .spacer {
     height: 40vh;
@@ -144,7 +138,7 @@
     max-width: 500px;
     font-family: var(--font-main);
     line-height: 1.3;
-    border: 5px solid var(--default);
+    border: 2px solid var(--default);
   }
 
   .step.active .step-content {

@@ -1,47 +1,117 @@
 <script>
-  import katexify from "../katexify";
+  let answer1 = '';
+  let answer2 = '';
+  let answer3 = '';
+  let answer4 = '';
+  let answer5 = ''; // Added for the new question
+  let showAnswers = false; // This variable will control the display of the correct answers
 
-  const math1 = "ax^2+bx+c=0";
-  const math2 = "x=-\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}";
-  const math3 = "V=\\frac{1}{3}\\pi r^2 h";
-
-  const mathArray = [math1, math2, math3];
-  let index = 0;
-  $: math = mathArray[index];
-
-  function changeMath() {
-    index = (index + 1) % 3;
+  function toggleAnswers() {
+    showAnswers = !showAnswers; // Toggle the display of the answers
   }
 </script>
 
-<h1 class="body-header">Using Math Equations</h1>
-<p class="body-text">
-  There are a few different ways we can include math equations in our markup. We
-  can include them as inline equations: {@html katexify(math)}. We can also have
-  equations that render as their own centered display: {@html katexify(
-    math,
-    true
-  )}
-  We can feed the math into a static equation directly: {@html katexify(
-    "V=\\pi\\textrm{ m}^3"
-  )}. And we can update them with reactivity (try clicking the button below).
-  That should cover our bases.
-</p>
-
-<div class="button-div">
-  <button on:click={changeMath}>
-    Displaying equation {index}
-  </button>
-</div>
-
 <style>
-  .button-div {
+  .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
   }
-  button {
-    font-family: var(--font-primary);
-    border: 3px solid black;
-    padding: 5px 10px;
+
+  .question {
+    margin-bottom: 40px;
+  }
+
+  .options, .answer {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  label {
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  input[type="radio"] {
+    margin-right: 10px;
   }
 </style>
+
+<div class="container">
+  <h1>Quiz Time!</h1>
+  <div class="question">
+    <p>True or False: In a normal distribution, the mean, median, and mode all have the same value and the graph of the distribution is symmetric.</p>
+    <label>
+      <input type="radio" bind:group={answer1} value="true"> True
+    </label>
+    <label>
+      <input type="radio" bind:group={answer1} value="false"> False
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>What 2 population parameters determine the shape of the normal curve? (they make the curve tall and skinny or short and fat)</p>
+    <label class="option">
+      <input type="radio" bind:group={answer2} value="a"> a, median and mean
+    </label>
+    <label class="option">
+      <input type="radio" bind:group={answer2} value="b"> b, mode and standard deviation
+    </label>
+    <label class="option">
+      <input type="radio" bind:group={answer2} value="c"> c, median and standard deviation
+    </label>
+    <label class="option">
+      <input type="radio" bind:group={answer2} value="d"> d, mean and mode
+    </label>
+    <label class="option">
+      <input type="radio" bind:group={answer2} value="e"> e, mean and standard deviation
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>Which of the following distributions is the least likely to fit a normal distribution?</p>
+    <label class="option">
+      <input type="radio" bind:group={answer3} value="a"> a, distribution of the heights of professional soccer players
+    </label>
+    <label class="option">
+      <input type="radio" bind:group={answer3} value="b"> b, distribution of the lengths of salmon in the Pacific Ocean
+    </label>
+    <label class="option">
+      <input type="radio" bind:group={answer3} value="c"> c, distribution of test scores among those who took the SATs in 1998
+    </label>
+    <label class="option">
+      <input type="radio" bind:group={answer3} value="d"> d,distribution of the ages of automobiles in driveable condition
+    </label>
+    <label class="option">
+      <input type="radio" bind:group={answer3} value="e"> e, distribution of the points scored by a basketball player per game
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>True or False: The point where the tails of a normal curve reach the x-axis is the exact point where the upper and lower extremes of the population are located.</p>
+    <label>
+      <input type="radio" bind:group={answer4} value="true"> True
+    </label>
+    <label>
+      <input type="radio" bind:group={answer4} value="false"> False
+    </label>
+  </div>
+
+  <!-- Button to show answers -->
+  <button on:click={toggleAnswers}>Show Answers</button>
+
+  <!-- Conditional display of answers -->
+  {#if showAnswers}
+    <div class="answers">
+      <p>Answers:</p>
+      <p>1: True (T)</p>
+      <p>2: a, median and mean (A)</p>
+      <p>3: d, distribution of the ages of automobiles in drivable condition (D)</p>
+      <p>4: False (F)</p>
+    </div>
+  {/if}
+</div>
+

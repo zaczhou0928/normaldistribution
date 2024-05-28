@@ -23,14 +23,14 @@
 
   const target2event = {
     0: () => {
-      // console.log('0' )
+
     },
     1: () => {
-      NormalDist;
+
     },
 
     2: () => {
-      NormalDistQ;
+
     },
   };
 

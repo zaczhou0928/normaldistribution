@@ -1,16 +1,6 @@
 <section id="conclusion">
-  <h1 class="body-header">Concluding Text</h1>
   <p class="body-text">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos voluptas dicta
-    blanditiis doloremque dolorum asperiores fugiat non, obcaecati maiores id,
-    voluptatum possimus libero iure laudantium dignissimos corrupti? Iure omnis
-    consectetur aperiam ipsam quod eum quas similique atque laboriosam ex
-    accusantium quaerat laudantium, est a libero sed cumque odio perspiciatis
-    enim, sequi, corrupti alias beatae nulla. Iure est ut dignissimos debitis
-    optio quasi vel distinctio officiis doloremque, ad voluptates, omnis nam
-    corporis, aut exercitationem ex excepturi tempore et modi unde alias nemo
-    accusantium. Tempore odio nulla ex ad ut molestiae unde minima ipsam
-    aliquid, omnis, labore commodi aliquam incidunt ratione autem?
+    We hope you've enjoyed exploring the dynamic world of normal distribution through our interactive visualizations. By manipulating sample sizes, adjusting the mean and standard deviation, and analyzing specific heights within the context of high school student heights, you've gained a hands-on understanding of how statistical concepts play out in real-world scenarios. This approach not only illustrates theoretical principles but also demonstrates their practical applications, enhancing your statistical intuition. Remember, the concepts learned here are foundational to many fields of science and analytics, opening doors to deeper insights in your future studies and professional endeavors. Continue exploring, questioning, and learning, and let your curiosity lead the way to new discoveries.
   </p>
 </section>
 
