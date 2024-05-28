@@ -22,16 +22,9 @@
   ];
 
   const target2event = {
-    0: () => {
-
-    },
-    1: () => {
-
-    },
-
-    2: () => {
-
-    },
+    0: () => {},
+    1: () => {},
+    2: () => {},
   };
 
   $: if (typeof value !== "undefined") target2event[value]();
