@@ -49,6 +49,20 @@
     // Add the area path
     areaPath = g.append("path")
                 .attr("fill", "lightblue");
+    // Adding X-axis label
+    g.append("text")
+      .attr("text-anchor", "end")
+      .attr("x", width / 2 + margin.left + 70)
+      .attr("y", height + margin.bottom - 5 )
+      .text("#Standard Deviations from Mean");
+
+    // Adding Y-axis label
+    g.append("text")
+      .attr("text-anchor", "end")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left + 10)
+      .attr("x", -height / 2 + margin.top + 60)
+      .text("Probability Density");
   }
 
   function updateGraph() {

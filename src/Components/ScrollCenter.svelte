@@ -27,15 +27,15 @@
   // Paragraph text for scrolly
   $: steps = [
     `<h1 class='step-title'>Sample Size = 10</h1>
-    <p>text</p>`,
+    <p>When we only have 10 values of heights in our sample, the distribution is more like a uniform distribution rather than a normal distribuition.</p>`,
     `<h1 class='step-title'>Sample Size = 50</h1>
-    <p>text</p>`,
+    <p>Increasing sample size from 10 to 50 makes our sample distribution getting closer to the shape of a normal distribution.</p>`,
     `<h1 class='step-title'>Sample Size = 100</h1>
-    <p>text</p>`,
+    <p></p>`,
     `<h1 class='step-title'>Sample Size = 1000</h1>
-    <p>text</p>`,
+    <p>With a sample size of 1000, we can clearly see that our sample distribution resembles a normal distribution quite well.</p>`,
     `<h1 class='step-title'>Sample Size = Population</h1>
-    <p>text</p>`
+    <p>With full population, we would reach optimal shape of a normal distribution, given our population size is statistically significant.</p>`
   ];
 
   const target2event = {

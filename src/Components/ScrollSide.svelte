@@ -11,13 +11,24 @@
   // Paragraph text for scrolly
   $: steps = [
     `<h1 class='step-title'>Adjust Mean and Standard Deviation</h1>
-      <p>
-        What happens if we change the average height or the variation in heights? Use our interactive model to adjust the mean (average height) and standard deviation (variability of height) of our dataset. As you modify these parameters, observe how the shape of the normal distribution changes. This hands-on experience helps to understand the impact of these parameters on the population distribution.
-      </p>`,
-    `<h1 class='step-title'>Where Do You Stand?</h1>
-      <p>
-        Curious about how a specific height measures up within a population? Enter any height into our model, and see not only where it falls within the distribution, but also the percentile rank of this height in the population. The graph will highlight the area under the curve up to this height, providing a visual and intuitive understanding of percentiles in a normal distribution.
-        </p>
+<p>
+  What happens if we change the mean or the standard deviation of a normal distribution? Use our interactive model to adjust the mean and standard deviation parameters. As you modify these parameters, observe how the shape of the normal distribution changes. This hands-on experience helps to understand the impact of these parameters on the population distribution.
+</p>`,
+    `<h1 class='step-title'>What Does the Area Represent?</h1>
+<p>
+  Here we have a more detailed graph of a standard normal distribution to help you understand what this probability density function can inform us. Adjust the sliders above to manipulate key parameters and observe their impact:
+</p>
+
+<ul>
+  <li><strong>Mean (µ):</strong> Shifts the peak of the curve along the x-axis. The mean represents the average value of the dataset, which in this case can be thought of as the average height of high school students.</li>
+  <li><strong>Standard Deviation (σ):</strong> Changes the spread of the curve. A larger standard deviation results in a wider curve, indicating more variability in student heights. A smaller standard deviation results in a narrower curve, suggesting that most students' heights are closer to the average.</li>
+  <li><strong>X-Value:</strong> Select a specific value along the x-axis. This is useful for seeing how individual data points compare relative to the overall distribution.</li>
+  <li><strong>Area Under the Curve:</strong> The shaded area represents the probability of finding a data point below the selected x-value. This area changes dynamically as you adjust the X-Value slider, allowing you to visualize and understand probabilities in a normal distribution context.</li>
+</ul>
+
+<p>
+  Use these interactive tools to deepen your understanding of how statistical measures influence the shape of a normal distribution and what the implications are for real-world data like high school student heights.
+</p>
   `,
   ];
 
@@ -30,10 +41,9 @@
   $: if (typeof value !== "undefined") target2event[value]();
 </script>
 
-<h2 class="body-header">Side Scrolly Example</h2>
+<h2 class="body-header">Interactive Visualization of Normal Distribution</h2>
 <p class="body-text">
-  Here's an example of a typical side-scroller. It's responsive, and will fold
-  to an overlap scroll if the screen gets small enough:
+  Below are two interactive graphs of normal distribution. You can freely choose parameters to visualize how they interact with each others and their impact on normal distribution.
 </p>
 <section>
   <!-- scroll container -->
@@ -149,8 +159,8 @@
     .step-content {
       width: 95%;
       max-width: 768px;
-      font-size: 17px;
-      line-height: 1.6;
+      font-size: 18px;
+      line-height: 2;
     }
 
     .spacer {
