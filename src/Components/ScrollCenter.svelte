@@ -78,14 +78,11 @@
         <Sample100 />
       {:else if value === 3}
         <Sample1000 />
-      {:else if value === 4}
+      {:else if value >= 4}
         <SampleAll />
       {/if}
     </div>
   </div>
-  <!-- end scroll -->
-  <br /><br />
-  <p class="body-text"></p>
 </section>
 
 <style>

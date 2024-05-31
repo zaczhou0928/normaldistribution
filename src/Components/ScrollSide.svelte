@@ -61,7 +61,7 @@
     <div class="charts-container">
       {#if value === 0}
         <NormalDist />
-      {:else if value === 1}
+      {:else if value >= 1}
         <NormalDistQ />
       {/if}
     </div>
