@@ -52,10 +52,9 @@
   $: if (typeof value !== "undefined") target2event[value]();
 </script>
 
-<h2 class="body-header">Center Scrolly Example</h2>
 <p class="body-text">
-  Here's an example of a typical side-scroller. It's responsive, and will fold
-  to an overlap scroll if the screen gets small enough:
+  Scroll down to see a more throughout illustration on how the graph would resemble a 
+  normal distribution when the sample size gradually increases.
 </p>
 <section>
   <!-- scroll container -->
@@ -86,7 +85,7 @@
   </div>
   <!-- end scroll -->
   <br /><br />
-  <p class="body-text">And that's the end of our scrolly.</p>
+  <p class="body-text"></p>
 </section>
 
 <style>
