@@ -1,25 +1,11 @@
 <script>
   import Scrolly from "./Scrolly.svelte";
-  import katexify from "../katexify";
-  import { scaleOrdinal } from "d3-scale";
-  import { select, selectAll } from "d3-selection";
   import Sample10 from "./Sample10.svelte";
   import Sample50 from "./Sample50.svelte";
   import Sample100 from "./Sample100.svelte";
   import Sample1000 from "./Sample1000.svelte";
   import SampleAll from "./SampleAll.svelte";
-
-  // import { scatterData } from './datasets.js';
-
-  const xKey = "weight";
-  const yKey = "weight";
-  const zKey = "outcome";
-  const titleKey = "gender";
-
-  const r = 10;
-
-  const seriesNames = new Set();
-  const seriesColors = ["#7e93ee", "#ff99ff"];
+  import Histogram from "./Histogram.svelte";
 
   // scroll iterator
   let value;
@@ -44,7 +30,8 @@
     2: () => { /* Define interactions for step 2 */ },
     3: () => { /* Define interactions for step 3 */ },
     4: () => { /* Define interactions for step 4 */ },
-    5: () => { /* Define interactions for step 4 */ }
+    5: () => { /* Define interactions for step 5 */ },
+    6: () => { /* Define interactions for step 6 */ }
   };
 
   // trigger events on scroll typeof lastname !== "undefined"
@@ -56,6 +43,7 @@
   Scroll down to see a more throughout illustration on how the graph would resemble a 
   normal distribution when the sample size gradually increases.
 </p>
+
 <section>
   <!-- scroll container -->
   <div class="section-container">
@@ -78,8 +66,10 @@
         <Sample100 />
       {:else if value === 3}
         <Sample1000 />
-      {:else if value >= 4}
+      {:else if value === 4}
         <SampleAll />
+      {:else if value >= 5}
+        <Histogram />
       {/if}
     </div>
   </div>

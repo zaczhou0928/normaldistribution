@@ -1,6 +1,5 @@
 <section id="intro">
   <h1 id="intro-hed">Normal Distribution Explorer</h1>
-  <h1 class="intro-sub">Learning through Innovative Storytelling</h1>
   <h3 id="intro__date">
     By Qianjin Zhou, Yujun Fang, and Yunqi Zhang
 </section>

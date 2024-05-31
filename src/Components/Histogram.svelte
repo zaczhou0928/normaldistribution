@@ -26,12 +26,13 @@
     const width = 600 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
-    const svg = d3.select('#chart-container').select("svg");
-    if (svg) {
-      svg.remove();
+    const container = d3.select('#custom-chart-container-all')
+      .select("svg")
+    if (container) {
+      container.remove(); // Remove any existing chart
     }
 
-    const container = d3.select('#chart-container')
+    const svg = d3.select('#custom-chart-container-all')
       .append('svg')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
@@ -48,14 +49,14 @@
       (heights);
 
     const xScale = d3.scaleLinear()
-      .domain([55, 90])
+      .domain([55, 90]) // Extended to better fit the distribution
       .range([0, width]);
 
     const yScale = d3.scaleLinear()
       .domain([0, d3.max(bins, d => d.length)])
       .range([height, 0]);
 
-    container.selectAll('rect')
+    svg.selectAll('rect')
       .data(bins)
       .enter().append('rect')
       .attr('x', d => xScale(d.x0))
@@ -64,6 +65,7 @@
       .attr('height', d => height - yScale(d.length))
       .attr('fill', 'steelblue');
 
+    // Normalize the PDF to fit within the histogram scale
     const pdfScaleFactor = d3.max(bins, d => d.length) / normalDistribution(mean, mean, stdDev);
 
     const line = d3.line()
@@ -72,31 +74,29 @@
       .curve(d3.curveBasis);
 
     const points = d3.range(55, 90, 0.1);
-    container.append("path")
+    svg.append("path")
       .datum(points)
       .attr("fill", "none")
       .attr("stroke", "red")
       .attr("d", line);
 
-    container.append('g')
+    svg.append('g')
       .attr('transform', `translate(0,${height})`)
       .call(d3.axisBottom(xScale));
 
-    container.append('g')
+    svg.append('g')
       .call(d3.axisLeft(yScale));
 
-    // Adjusted position for the x-axis label
-    container.append('text')
+    svg.append('text')
       .attr('x', width / 2)
-      .attr('y', height + margin.bottom - 3)
+      .attr('y', height + margin.bottom - 5)
       .attr('text-anchor', 'middle')
       .text('Height (inches)');
 
-    // Adjusted position for the y-axis label
-    container.append('text')
+    svg.append('text')
       .attr('transform', 'rotate(-90)')
       .attr('x', -height / 2)
-      .attr('y', -margin.left + 12)
+      .attr('y', -margin.left + 20)
       .attr('text-anchor', 'middle')
       .text('Frequency');
   }
@@ -106,7 +106,16 @@
   });
 </script>
 
-<h2 class="body-header">Explore the Effect of Sample Size</h2>
+<div id="custom-chart-container-all"></div>
+
+<div style="text-align: center; margin-top: 20px;">
+  <select bind:value={selectedSampleSize} on:change={updateSampleSize}>
+    <option value="10">Sample Size: 10</option>
+    <option value="100">Sample Size: 100</option>
+    <option value="1000">Sample Size: 1000</option>
+    <option value="all">All Data</option>
+  </select>
+</div>
 
 <p class="body-text">
   To understand how the normal distribution works in real life, 
@@ -118,23 +127,13 @@
   larger samples tend to be normally distributed, regardless of the shape of the 
   population distribution.
 </p>
- 
-<div id="chart-container"></div>
-
-<div style="text-align: center; margin-top: 20px;">
-  <select bind:value={selectedSampleSize} on:change={updateSampleSize}>
-    <option value="10">Sample Size: 10</option>
-    <option value="100">Sample Size: 100</option>
-    <option value="1000">Sample Size: 1000</option>
-    <option value="all">All Data</option>
-  </select>
-</div>
 
 <style>
-  #chart-container {
+  #custom-chart-container-all {
     width: 600px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
   }
 </style>
+
