@@ -115,7 +115,11 @@
   $: if (mean || std || xValue) updateGraph();
 </script>
 
-<div>
+<p class="body-text">
+  What happens if we change the mean or the standard deviation of a normal distribution? Use our interactive model to adjust the mean and standard deviation parameters. As you modify these parameters, observe how the shape of the normal distribution changes.
+</p>
+
+<div class="slider-container">
   <label for="mean">Mean:</label>
   <input type="range" id="mean" bind:value={mean} min="-10" max="10" step="0.1">
 
@@ -134,6 +138,21 @@
 <!-- SVG container for D3 graph -->
 <svg bind:this={svg}></svg>
 
+<div class="content-container">
+  <h1 class='body-header'>What Does the Parameters Reflect?</h1>
+
+  <ul class='body-text'>
+    <li><strong>Mean (µ):</strong> Shifts the peak of the curve along the x-axis. The mean represents the average value of the dataset, which in this case can be thought of as the average height of high school students.</li>
+    <li><strong>Standard Deviation (σ):</strong> Changes the spread of the curve. A larger standard deviation results in a wider curve, indicating more variability in student heights. A smaller standard deviation results in a narrower curve, suggesting that most students' heights are closer to the average.</li>
+    <li><strong>X-Value:</strong> Select a specific value along the x-axis. This is useful for seeing how individual data points compare relative to the overall distribution.</li>
+    <li><strong>Area Under the Curve:</strong> The shaded area represents the probability of finding a data point below the selected x-value. This area changes dynamically as you adjust the X-Value slider, allowing you to visualize and understand probabilities in a normal distribution context.</li>
+  </ul>
+
+  <p class='body-text'>
+    Use these interactive tools to deepen your understanding of how statistical measures influence the shape of a normal distribution and what the implications are for real-world data like high school student heights.
+  </p>
+</div>
+
 <style>
   input {
     margin: 0.5rem;
@@ -141,10 +160,23 @@
     width: 80px;
   }
   svg {
-    width: 100%;
     height: 850px;
     overflow: visible;
     display: block;
-    margin: auto;
+    margin: 0 auto;
   }
+
+  .slider-container {
+    text-align: center; /* Centers the text and inline elements like input */
+    margin: 20px auto; /* Adds margin on top and bottom, auto on left and right */
+    width: 80%; /* Adjust this as needed to fit the design */
+  }
+
+  .content-container {
+    margin: 20px auto; /* Centers the container and adds vertical spacing */
+    margin-top: -400px; /* Sets the top margin to 20 pixels */
+    padding: 20px; /* Adds padding inside the container */
+    max-width: 800px; /* Restricts the maximum width to keep the content readable */
+    font-size: 18px;
+}
 </style>

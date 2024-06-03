@@ -7,13 +7,13 @@
   import ScrollCenter from "./Components/ScrollCenter.svelte";
   import Resources from "./Components/Resources.svelte";
   import ScrollSide from "./Components/ScrollSide.svelte";
-  import Histogram from './Components/Histogram.svelte';
+  import NormalDistributionQuantile from "./Components/NormalDistributionQuantile.svelte";
 </script>
 
 <Meta />
 <Title />
 <Intro />
 <ScrollCenter />
-<ScrollSide />
+<NormalDistributionQuantile />
 <Quiz />
 <Conclusion />

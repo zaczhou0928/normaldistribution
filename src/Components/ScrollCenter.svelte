@@ -40,8 +40,6 @@
 </script>
 
 <p class="body-text">
-  Scroll down to see a more throughout illustration on how the graph would resemble a 
-  normal distribution when the sample size gradually increases.
 </p>
 
 <section>

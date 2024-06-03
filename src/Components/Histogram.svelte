@@ -108,7 +108,7 @@
 
 <div id="custom-chart-container-all"></div>
 
-<div style="text-align: center; margin-top: 20px;">
+<div style="text-align: center; margin-top: -100px;">
   <select bind:value={selectedSampleSize} on:change={updateSampleSize}>
     <option value="10">Sample Size: 10</option>
     <option value="100">Sample Size: 100</option>
@@ -118,14 +118,9 @@
 </div>
 
 <p class="body-text">
-  To understand how the normal distribution works in real life, 
-  let's look at a dataset of high school student heights. 
-  Begin with a smaller sample size and gradually increase it. 
-  Notice how the distribution of heights begins to resemble the 
-  classic 'bell curve' of the normal distribution as the sample size grows. 
-  This visualization helps illustrate the Central Limit Theorem in action: 
+  This visualization above helps illustrate the Central Limit Theorem in action: 
   larger samples tend to be normally distributed, regardless of the shape of the 
-  population distribution.
+  population distribution. Feel free to choose between the sample sizes to see the trend!
 </p>
 
 <style>
@@ -134,6 +129,9 @@
     height: 400px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .body-text {
+    margin-top: -500px;  /* Adjust this value to increase or decrease the space */
   }
 </style>
 
