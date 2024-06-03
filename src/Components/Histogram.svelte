@@ -108,7 +108,7 @@
 
 <div id="custom-chart-container-all"></div>
 
-<div style="text-align: center; margin-top: -100px;">
+<div style="text-align: center; margin-top: 20px;">
   <select bind:value={selectedSampleSize} on:change={updateSampleSize}>
     <option value="10">Sample Size: 10</option>
     <option value="100">Sample Size: 100</option>
@@ -131,7 +131,7 @@
     margin-right: auto;
   }
   .body-text {
-    margin-top: -500px;  /* Adjust this value to increase or decrease the space */
+    margin-top: -200px;  /* Adjust this value to increase or decrease the space */
   }
 </style>
 
