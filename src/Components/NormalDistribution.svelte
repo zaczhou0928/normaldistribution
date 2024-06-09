@@ -97,6 +97,7 @@
 <!-- SVG container for D3 graph -->
 <svg bind:this={svg}></svg>
 
+
 <style>
   input {
     margin: 0.5rem;

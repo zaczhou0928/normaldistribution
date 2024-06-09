@@ -37,7 +37,7 @@
       (heights);
 
     const xScale = d3.scaleLinear()
-      .domain([55, 90]) // Extended to better fit the distribution
+      .domain([55, 82]) // Extended to better fit the distribution
       .range([0, width]);
 
     const yScale = d3.scaleLinear()
@@ -61,7 +61,7 @@
       .y(d => yScale(normalDistribution(d, mean, stdDev) * pdfScaleFactor))
       .curve(d3.curveBasis);
 
-    const points = d3.range(55, 90, 0.1);
+    const points = d3.range(55, 82, 0.1);
     svg.append("path")
       .datum(points)
       .attr("fill", "none")
