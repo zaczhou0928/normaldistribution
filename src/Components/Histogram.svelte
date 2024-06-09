@@ -131,7 +131,7 @@
     margin-right: auto;
   }
   .body-text {
-    margin-top: -200px;  /* Adjust this value to increase or decrease the space */
+    margin-top: -100px;  /* Adjust this value to increase or decrease the space */
   }
 </style>
 
